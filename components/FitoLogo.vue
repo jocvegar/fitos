@@ -1,13 +1,9 @@
 <template>
-  <img
-    class="VuetifyLogo"
-    alt="Vuetify Logo"
-    src="/vuetify-logo.svg"
-  >
+  <img class="FitoLogo" alt="Fito Logo" src="/fitos.png" />
 </template>
 
 <style>
-.VuetifyLogo {
+.FitoLogo {
   height: 180px;
   width: 180px;
   transform: rotateY(560deg);

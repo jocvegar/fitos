@@ -6,13 +6,18 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: "%s - main",
     title: "Fitos",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "Restaurante Fitos" },
-      { name: "format-detection", content: "telephone=no" }
+      { name: "format-detection", content: "telephone=98803849" },
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href:
+          "https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css"
+      }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
@@ -29,8 +34,17 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    "@nuxtjs/vuetify"
+    "@nuxtjs/vuetify",
+    "@nuxtjs/google-fonts"
   ],
+  googleFonts: {
+    families: {
+      Roboto: true,
+      Lobster: true,
+      "Josefin+Sans": true,
+      Lato: [100, 300]
+    }
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -53,6 +67,8 @@ export default {
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ["~/assets/variables.scss"],
+    treeShake: true,
+    // defaultAssets: false,
     theme: {
       dark: false,
       themes: {

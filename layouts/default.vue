@@ -1,7 +1,7 @@
 <template>
-  <v-app dark>
-    <v-app-bar fixed app :height="80" elevate-on-scroll>
-      <v-toolbar-title v-text="title" />
+  <v-app>
+    <v-app-bar color="black" dark fixed app :height="80" elevate-on-scroll>
+      <v-toolbar-title v-text="title" @click.stop="goHome()" class="homeIcon" />
       <v-spacer />
       <v-btn icon @click.stop="rightDrawer = !rightDrawer">
         <v-icon>mdi-menu</v-icon>
@@ -12,20 +12,23 @@
         <Nuxt />
       </v-container>
     </v-main>
-    <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light>
-              mdi-repeat
-            </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
+    <v-navigation-drawer v-model="rightDrawer" right temporary fixed>
+      <v-list dense>
+        <v-subheader class="text-center">Menu</v-subheader>
+        <v-list-item-group v-model="selectedItem" color="orange darken-2">
+          <v-list-item v-for="(item, i) in items" :key="i" nuxt :to="item.to">
+            <v-list-item-icon>
+              <v-icon v-text="item.icon"></v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title v-text="item.title"></v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
-    <v-footer absolute="app">
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+    <v-footer absolute app>
+      <span class="mx-auto">&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
   </v-app>
 </template>
@@ -37,19 +40,30 @@ export default {
       items: [
         {
           icon: "mdi-apps",
-          title: "Welcome",
+          title: "Inicio",
           to: "/"
         },
         {
           icon: "mdi-chart-bubble",
-          title: "Inspire",
-          to: "/encuenta"
+          title: "Encuesta",
+          to: "/encuesta"
         }
       ],
-      right: true,
       rightDrawer: false,
-      title: "Vuetify.js"
+      title: "Fito's",
+      selectedItem: 1
     };
+  },
+  methods: {
+    goHome() {
+      this.$router.push("/");
+    }
   }
 };
 </script>
+
+<style scoped>
+.homeIcon {
+  cursor: pointer;
+}
+</style>

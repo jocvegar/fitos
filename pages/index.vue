@@ -1,10 +1,10 @@
 <template>
-  <v-row justify="center" align="center" class="my-10">
+  <v-row justify="center" align="center" class="my-5">
     <v-col cols="12" sm="10">
-      <v-card class="logo py-4 d-flex justify-center">
-        <NuxtLogo />
-        <VuetifyLogo />
+      <v-card class="logo py-4 d-flex justify-center my-1">
+        <FitoLogo />
       </v-card>
+
       <v-card>
         <v-card-title class="headline">
           Welcome to the Vuetify + Nuxt.js template
