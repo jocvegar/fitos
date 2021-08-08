@@ -7,19 +7,24 @@
             <v-card-title>
               Encuesta
             </v-card-title>
+            <v-divider></v-divider>
             <v-card-text>
-              <p class="title font-weight-bold">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                nesciunt architecto asperiores repellendus, placeat odit at
-                adipisci omnis dolorem iusto quod obcaecati facilis laudantium
-                temporibus totam, ratione fugit. Vero, quis.
-              </p>
-              <p class="title">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                nesciunt architecto asperiores repellendus, placeat odit at
-                adipisci omnis dolorem iusto quod obcaecati facilis laudantium
-                temporibus totam, ratione fugit. Vero, quis.
-              </p>
+              <ol>
+                <li>
+                  ¿Cómo calificas la calidad/sabor de la comida o platillos?
+                </li>
+                <li>
+                  ¿Te agradó la presentación de la comida o platillos?
+                </li>
+                <li>
+                  ¿Cómo calificas la rapidez de del servicio a la hora de
+                  ordenar?
+                </li>
+                <li>¿Cómo calificas la limpieza del lugar?</li>
+                <li>
+                  ¿Cómo calificas el servicio del mesero?
+                </li>
+              </ol>
             </v-card-text>
           </v-card>
         </v-col>
