@@ -9,22 +9,27 @@
             </v-card-title>
             <v-divider></v-divider>
             <v-card-text>
-              <ol>
-                <li>
-                  ¿Cómo calificas la calidad/sabor de la comida o platillos?
-                </li>
-                <li>
-                  ¿Te agradó la presentación de la comida o platillos?
-                </li>
-                <li>
-                  ¿Cómo calificas la rapidez de del servicio a la hora de
-                  ordenar?
-                </li>
-                <li>¿Cómo calificas la limpieza del lugar?</li>
-                <li>
-                  ¿Cómo calificas el servicio del mesero?
-                </li>
-              </ol>
+              <v-list-item>
+                <v-list-item-content>
+                  <v-list-item-title class="my-5">
+                    1. ¿Cómo calificas la calidad/sabor de la comida o
+                    platillos?
+                  </v-list-item-title>
+                  <v-list-item-title class="my-5">
+                    2. ¿Te agradó la presentación de la comida o platillos?
+                  </v-list-item-title>
+                  <v-list-item-title class="my-5">
+                    3. ¿Cómo calificas la rapidez de del servicio a la hora de
+                    ordenar?
+                  </v-list-item-title>
+                  <v-list-item-title class="my-5">
+                    4. ¿Cómo calificas la limpieza del lugar?
+                  </v-list-item-title>
+                  <v-list-item-title class="my-5">
+                    5. ¿Cómo calificas el servicio del mesero?
+                  </v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
             </v-card-text>
           </v-card>
         </v-col>

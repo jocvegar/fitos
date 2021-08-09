@@ -4,8 +4,8 @@
 
 <style>
 .FitoLogo {
-  height: 180px;
-  width: 180px;
+  height: 25vh;
+  width: 25vw;
   transform: rotateY(560deg);
   animation: turn 3.5s ease-out forwards 1s;
 }
