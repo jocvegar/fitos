@@ -25,6 +25,14 @@
             </v-list-item-content>
           </v-list-item>
         </v-list-item-group>
+        <v-list-item :href="menuLink.to" target="_blank">
+          <v-list-item-icon>
+            <v-icon v-text="menuLink.icon"></v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title v-text="menuLink.title"></v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
     <v-footer absolute app>
@@ -49,6 +57,11 @@ export default {
           to: "/encuesta"
         }
       ],
+      menuLink: {
+        icon: "mdi-book-open-page-variant",
+        title: "Menu",
+        to: "https://menu.fitoshn.com/"
+      },
       rightDrawer: false,
       title: "FITO'S",
       selectedItem: 1

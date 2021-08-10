@@ -11,14 +11,19 @@ export default {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "Restaurante Fitos" },
-      { name: "format-detection", content: "telephone=98803849" },
+      { name: "title", content: "Fitos" },
       {
-        rel: "stylesheet",
-        type: "text/css",
-        href:
-          "https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css"
-      }
+        hid: "description",
+        name: "description",
+        content: "Siéntete como en Casa"
+      },
+      { name: "format-detection", content: "telephone=98803849" },
+      { name: "keywords", content: "Comida, Honduras, Fitos, Hamburguesa" },
+      { name: "robots", content: "index, follow" },
+      { name: "name", content: "Spanish" },
+      { property: "og:type", content: "website" },
+      { property: "og:title", content: "Fitos" },
+      { property: "og:description", content: "Siéntete como en casa" }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
