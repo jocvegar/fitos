@@ -196,7 +196,16 @@ export default {
     };
   },
   head() {
-    titleTemplate: "%s | Encuesta";
+    return {
+      titleTemplate: "%s | Encuesta",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "Encuesta"
+        }
+      ]
+    };
   },
   methods: {
     showMeShowMeShowMe() {
