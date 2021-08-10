@@ -1,10 +1,10 @@
 <template>
   <v-app>
-    <v-app-bar color="black" dark fixed app :height="80" elevate-on-scroll>
+    <v-app-bar color="secondary" dark fixed app :height="80" elevate-on-scroll>
       <v-toolbar-title v-text="title" @click.stop="goHome()" class="homeIcon" />
       <v-spacer />
       <v-btn icon @click.stop="rightDrawer = !rightDrawer">
-        <v-icon>mdi-menu</v-icon>
+        <v-icon>mdi-dots-vertical</v-icon>
       </v-btn>
     </v-app-bar>
     <v-main>

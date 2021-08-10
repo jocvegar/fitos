@@ -1,4 +1,5 @@
 import colors from "vuetify/es5/util/colors";
+// import colors from "vuetify/lib/util/colors";
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -73,13 +74,22 @@ export default {
       dark: false,
       themes: {
         dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
+          primary: colors.black,
+          accent: colors.red.darken1,
+          secondary: colors.orange.darken2,
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3
+        },
+        light: {
+          primary: "#000",
+          secondary: "#F57C00",
+          accent: "#D32F2F",
+          error: "#b71c1c",
+          info: colors.teal.lighten1,
+          success: colors.green.accent3,
+          warning: "#FFC007"
         }
       }
     }
