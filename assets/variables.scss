@@ -1,5 +1,13 @@
 // Ref: https://github.com/nuxt-community/vuetify-module#customvariables
-$body-font-family: "Lobster";
+
+@font-face {
+  font-family: "MYRIADPRO";
+  src: local("MYRIADPRO"),
+    url(~assets/fonts/myriad-pro-cufonfonts/MYRIADPRO-REGULAR.OTF)
+      format("truetype");
+}
+
+$body-font-family: "MYRIADPRO";
 $heading-font-family: "Josefin+Sans";
 $font-size-root: 20px;
 

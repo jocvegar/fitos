@@ -50,7 +50,7 @@ export default {
         }
       ],
       rightDrawer: false,
-      title: "Fito's",
+      title: "FITO'S",
       selectedItem: 1
     };
   },
