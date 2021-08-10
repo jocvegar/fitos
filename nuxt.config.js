@@ -41,7 +41,29 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     "@nuxtjs/vuetify",
-    "@nuxtjs/google-fonts"
+    "@nuxtjs/google-fonts",
+    [
+      "@nuxtjs/firebase",
+      {
+        config: {
+          apiKey: process.env.APIKEY,
+          authDomain: process.env.AUTH_DOMAIN,
+          databaseURL: process.env.DB,
+          projectId: process.env.PROJECT_ID,
+          storageBucket: process.env.STORAGE_BUCKET,
+          messagingSenderId: process.env.SENDER_ID,
+          appId: process.env.APP_ID,
+          measurementId: process.env.MEASUREMENT_ID
+        },
+        services: {
+          firestore: {
+            enablePersistence: {
+              synchronizeTabs: true
+            }
+          }
+        }
+      }
+    ]
   ],
   googleFonts: {
     families: {
