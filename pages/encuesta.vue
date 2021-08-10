@@ -13,7 +13,7 @@
                 <v-list-item>
                   <v-list-item-content>
                     <v-list-item-title class="my-5 text-wrap">
-                      1. ¿Cómo calificas la calidad/sabor de la comida o
+                      1. ¿Cómo calificás la calidad/sabor de la comida o
                       platillos?
                       <v-radio-group
                         v-model="survey.calidad"
@@ -48,7 +48,7 @@
                       </v-radio-group>
                     </v-list-item-title>
                     <v-list-item-title class="my-5 text-wrap">
-                      3. ¿Cómo calificas la rapidez del servicio a la hora de
+                      3. ¿Cómo calificás la rapidez del servicio a la hora de
                       ordenar?
                       <v-radio-group
                         v-model="survey.rapidez"
@@ -66,7 +66,7 @@
                       </v-radio-group>
                     </v-list-item-title>
                     <v-list-item-title class="my-5 text-wrap">
-                      4. ¿Cómo calificas la limpieza del lugar?
+                      4. ¿Cómo calificás la limpieza del lugar?
                       <v-radio-group
                         v-model="survey.limpieza"
                         :row="$vuetify.breakpoint.mdAndUp"
@@ -83,7 +83,7 @@
                       </v-radio-group>
                     </v-list-item-title>
                     <v-list-item-title class="my-5 text-wrap">
-                      5. ¿Cómo calificas el servicio del mesero?
+                      5. ¿Cómo calificás el servicio del mesero?
                       <v-radio-group
                         v-model="survey.mesero"
                         :row="$vuetify.breakpoint.mdAndUp"
