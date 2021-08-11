@@ -10,9 +10,6 @@
 
 <script>
 export default {
-  created() {
-    if (this.$store.state.user != null) return this.$router.push("/");
-  },
   middleware: "auth"
 };
 </script>
