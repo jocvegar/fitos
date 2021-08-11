@@ -1,13 +1,20 @@
 <template>
   <v-container>
-    HOLA!
+    <client-only placeholder="Cargando...">
+      <div class="chart-container">
+        <chart />
+      </div>
+    </client-only>
   </v-container>
 </template>
 
-<script>
-export default {
-  middleware: "auth"
-};
-</script>
-
-<style></style>
+<style lang="scss">
+.chart-container {
+  flex-grow: 1;
+  min-height: 0;
+  > div {
+    position: relative;
+    height: 100%;
+  }
+}
+</style>
