@@ -1,13 +1,14 @@
 const state = () => ({
-  user: null
+  user: null,
+  alertMessage: "",
+  alert: false,
+  alertType: ""
 });
 
 const actions = {
   async onAuthStateChangedAction(state, { authUser, claims }) {
     if (!authUser) {
-      // remove state
       state.commit("SET_USER", null);
-      //redirect from here
       this.$router.push({
         path: "/"
       });
@@ -21,12 +22,28 @@ const actions = {
         photoURL
       });
     }
+  },
+  setAlert({ commit }, payload) {
+    commit("SET_ALERT", payload);
+  },
+  resetAlert({ commit }) {
+    commit("RESET_ALERT");
   }
 };
 
 const mutations = {
   SET_USER(state, user) {
     state.user = user;
+  },
+  SET_ALERT(state, payload) {
+    state.alert = true;
+    state.alertMessage = payload.message;
+    state.alertType = payload.type;
+  },
+  RESET_ALERT(state) {
+    state.alert = false;
+    state.alertMessage = "";
+    state.alertType = "";
   }
 };
 

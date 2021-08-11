@@ -1,15 +1,5 @@
 <template>
   <v-container>
-    <v-alert
-      v-if="error"
-      border="right"
-      colored-border
-      type="error"
-      elevation="2"
-    >
-      {{ errorMessage }}
-    </v-alert>
-
     <v-row style="min-height: 50vh">
       <v-btn
         color="error"
@@ -40,6 +30,9 @@ export default {
       error: null
     };
   },
+  created() {
+    if (this.$store.state.user != null) return this.$router.push("/admin");
+  },
   methods: {
     googleSignIn() {
       let provider = new firestore.auth.GoogleAuthProvider();
@@ -51,10 +44,16 @@ export default {
           const isNewUser = result.additionalUserInfo.isNewUser;
           if (isNewUser) {
             user.delete();
-            this.errorMessage = "Usuario no existe buahah";
-            this.error = true;
+            this.$store.dispatch("setAlert", {
+              message: "Usuario no existe buahaha",
+              type: "error"
+            });
           } else {
             $nuxt.$router.push("/admin");
+            this.$store.dispatch("setAlert", {
+              message: `Hola ${user.displayName}`,
+              type: "success"
+            });
           }
         })
         .catch(error => console.log(`error`, error));

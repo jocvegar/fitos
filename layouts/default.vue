@@ -9,6 +9,17 @@
     </v-app-bar>
     <v-main>
       <v-container>
+        <v-alert
+          v-if="alert"
+          border="right"
+          colored-border
+          :type="alertType"
+          elevation="2"
+          dismissible
+          @input="onclose"
+        >
+          {{ alertMessage }}
+        </v-alert>
         <Nuxt />
       </v-container>
     </v-main>
@@ -60,7 +71,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapState } from "vuex";
 
 export default {
   data() {
@@ -96,12 +107,16 @@ export default {
         .signOut()
         .then(() => this.$router.push("/"))
         .catch(error => console.log(`error`, error));
+    },
+    onclose() {
+      this.$store.dispatch("resetAlert");
     }
   },
   computed: {
     ...mapGetters({
       user: "getUser"
-    })
+    }),
+    ...mapState(["alert", "alertMessage", "alertType"])
   }
 };
 </script>
