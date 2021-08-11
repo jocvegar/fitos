@@ -8,6 +8,14 @@
   </v-container>
 </template>
 
+<script>
+export default {
+  created() {
+    if (this.$store.state.user != null) return this.$router.push("/");
+  },
+  middleware: "auth"
+};
+</script>
 <style lang="scss">
 .chart-container {
   flex-grow: 1;
