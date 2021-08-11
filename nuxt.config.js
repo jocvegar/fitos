@@ -60,6 +60,13 @@ export default {
             enablePersistence: {
               synchronizeTabs: true
             }
+          },
+          auth: {
+            initialize: {
+              onAuthStateChangedAction: "onAuthStateChangedAction"
+              // subscribeManually: false
+            },
+            ssr: false
           }
         }
       }

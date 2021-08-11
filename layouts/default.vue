@@ -24,15 +24,33 @@
               <v-list-item-title v-text="item.title"></v-list-item-title>
             </v-list-item-content>
           </v-list-item>
+          <v-list-item :href="menuLink.to" target="_blank">
+            <v-list-item-icon>
+              <v-icon v-text="menuLink.icon"></v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title v-text="menuLink.title"></v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <div v-if="user">
+            <v-list-item nuxt to="/admin">
+              <v-list-item-icon>
+                <v-icon>mdi-chart-areaspline</v-icon>
+              </v-list-item-icon>
+              <v-list-item-content>
+                <v-list-item-title>Admin</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+            <v-list-item @click="logOut()">
+              <v-list-item-icon>
+                <v-icon>mdi-logout</v-icon>
+              </v-list-item-icon>
+              <v-list-item-content>
+                <v-list-item-title>Log Out</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </div>
         </v-list-item-group>
-        <v-list-item :href="menuLink.to" target="_blank">
-          <v-list-item-icon>
-            <v-icon v-text="menuLink.icon"></v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title v-text="menuLink.title"></v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
       </v-list>
     </v-navigation-drawer>
     <v-footer absolute app>
@@ -42,6 +60,8 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   data() {
     return {
@@ -70,7 +90,18 @@ export default {
   methods: {
     goHome() {
       this.$router.push("/");
+    },
+    logOut() {
+      this.$fire.auth
+        .signOut()
+        .then(() => this.$router.push("/"))
+        .catch(error => console.log(`error`, error));
     }
+  },
+  computed: {
+    ...mapGetters({
+      user: "getUser"
+    })
   }
 };
 </script>

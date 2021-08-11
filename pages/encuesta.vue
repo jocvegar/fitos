@@ -208,9 +208,6 @@ export default {
     };
   },
   methods: {
-    showMeShowMeShowMe() {
-      console.log(`survey`, this.survey);
-    },
     async validateAndSubmit() {
       if (this.$refs.form.validate()) {
         const surveyRef = await this.$fire.firestore.collection("surveys");
