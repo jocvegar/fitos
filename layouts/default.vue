@@ -32,7 +32,7 @@
               <v-list-item-title v-text="menuLink.title"></v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <div v-if="user">
+          <div v-show="user">
             <v-list-item nuxt to="/admin">
               <v-list-item-icon>
                 <v-icon>mdi-chart-areaspline</v-icon>

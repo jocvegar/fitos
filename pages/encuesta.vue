@@ -215,6 +215,8 @@ export default {
         this.survey.code = `${(Math.random() + 1)
           .toString(36)
           .substring(8)}-${new Date().getTime()}`;
+        this.survey.createdAt = new Date();
+
         try {
           surveyRef.add(this.survey);
           this.dialog = true;
