@@ -47,6 +47,18 @@ export default {
       ]
     };
   },
+  head() {
+    return {
+      titleTemplate: "%s | Admin",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "Admin"
+        }
+      ]
+    };
+  },
   async mounted() {
     await this.getSurveys();
     this.getChartData();
