@@ -1,6 +1,7 @@
 {
   "name": "fitos",
   "version": "1.0.0",
+  "desciption": "Siéntete como en Casa",
   "private": true,
   "scripts": {
     "dev": "nuxt",

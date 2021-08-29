@@ -191,6 +191,11 @@ export default {
           id: 5,
           label: "Muy Mala",
           value: "muy_mala"
+        },
+        {
+          id: 6,
+          label: "No Aplica",
+          value: "no_aplica"
         }
       ]
     };

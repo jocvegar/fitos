@@ -80,7 +80,14 @@ export default {
     },
     getChartData() {
       this.chartdata = {
-        labels: ["Muy Buena", "Buena", "Regular", "Mala", "Muy Mala"],
+        labels: [
+          "Muy Buena",
+          "Buena",
+          "Regular",
+          "Mala",
+          "Muy Mala",
+          "No Aplica"
+        ],
         datasets: [
           {
             label: "Calidad",
@@ -162,6 +169,10 @@ export default {
         muy_mala: this.surveyItemCount(
           this._.groupBy(this.surveys, attr),
           "muy_mala"
+        ),
+        no_aplica: this.surveyItemCount(
+          this._.groupBy(this.surveys, attr),
+          "no_aplica"
         )
       };
     }
